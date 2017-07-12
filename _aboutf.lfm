@@ -1,0 +1,93 @@
+object aboutf: Taboutf
+  Left = 710
+  Height = 440
+  Top = 233
+  Width = 514
+  ActiveControl = Panel1
+  BorderIcons = [biSystemMenu, biMaximize]
+  BorderStyle = bsDialog
+  Caption = 'About eProf'
+  ClientHeight = 440
+  ClientWidth = 514
+  Color = clBtnFace
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.2'
+  object Panel1: TPanel
+    Left = 0
+    Height = 153
+    Top = 250
+    Width = 514
+    Align = alBottom
+    BevelOuter = bvNone
+    BorderWidth = 4
+    ClientHeight = 153
+    ClientWidth = 514
+    TabOrder = 0
+    object Memo1: TMemo
+      Left = 4
+      Height = 145
+      Top = 4
+      Width = 506
+      Align = alClient
+      Color = clGradientInactiveCaption
+      Lines.Strings = (
+        'DEVELOPED BY:'
+        ''
+        '  NB Systems cc'
+        '  E-mail:  nico@nbsystems.co.za'
+        '  Web: www.nbsystems.co.za'
+        ''
+        'DISCLAIMER'
+        ''
+        'NB Systems cc will not accept liability for any damage or loss suffered '
+        'as a result of the use of this program.'
+      )
+      ReadOnly = True
+      TabOrder = 0
+      TabStop = False
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 37
+    Top = 403
+    Width = 514
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 37
+    ClientWidth = 514
+    TabOrder = 1
+    object OKBtn: TBitBtn
+      Left = 6
+      Height = 30
+      Top = 2
+      Width = 92
+      Cancel = True
+      Default = True
+      DefaultCaption = True
+      Kind = bkClose
+      TabOrder = 0
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Height = 250
+    Top = 0
+    Width = 514
+    Align = alClient
+    BevelInner = bvLowered
+    BevelOuter = bvNone
+    BorderWidth = 3
+    ClientHeight = 250
+    ClientWidth = 514
+    TabOrder = 2
+    object ProgramIcon: TImage
+      Left = 4
+      Height = 242
+      Top = 4
+      Width = 506
+      Align = alClient
+    end
+  end
+end

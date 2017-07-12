@@ -1,0 +1,20 @@
+object viewpictf: Tviewpictf
+  Left = 810
+  Height = 202
+  Top = 340
+  Width = 249
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'viewpictf'
+  ClientHeight = 202
+  ClientWidth = 249
+  Color = clBtnFace
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object Image1: TImage
+    Left = 0
+    Height = 202
+    Top = 0
+    Width = 249
+    Align = alClient
+  end
+end

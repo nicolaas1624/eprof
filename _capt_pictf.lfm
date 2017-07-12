@@ -1,0 +1,337 @@
+object cap_t_pictf: Tcap_t_pictf
+  Left = 583
+  Height = 644
+  Top = 204
+  Width = 850
+  ActiveControl = PICTIDBox
+  BorderIcons = [biSystemMenu, biMaximize]
+  BorderStyle = bsDialog
+  Caption = 'Capture Image'
+  ClientHeight = 644
+  ClientWidth = 850
+  Color = clBtnFace
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 37
+    Top = 607
+    Width = 850
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 37
+    ClientWidth = 850
+    TabOrder = 0
+    object OkBtn: TBitBtn
+      Left = 3
+      Height = 25
+      Top = 5
+      Width = 75
+      Caption = '&OK'
+      Default = True
+      Glyph.Data = {
+        DE010000424DDE01000000000000760000002800000024000000120000000100
+        0400000000006801000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333333333333333330000333333333333333333333333F33333333333
+        00003333344333333333333333388F3333333333000033334224333333333333
+        338338F3333333330000333422224333333333333833338F3333333300003342
+        222224333333333383333338F3333333000034222A22224333333338F338F333
+        8F33333300003222A3A2224333333338F3838F338F33333300003A2A333A2224
+        33333338F83338F338F33333000033A33333A222433333338333338F338F3333
+        0000333333333A222433333333333338F338F33300003333333333A222433333
+        333333338F338F33000033333333333A222433333333333338F338F300003333
+        33333333A222433333333333338F338F00003333333333333A22433333333333
+        3338F38F000033333333333333A223333333333333338F830000333333333333
+        333A333333333333333338330000333333333333333333333333333333333333
+        0000
+      }
+      ModalResult = 1
+      NumGlyphs = 2
+      TabOrder = 0
+    end
+    object CancelBtn: TBitBtn
+      Left = 86
+      Height = 25
+      Top = 5
+      Width = 75
+      Cancel = True
+      Caption = '&Cancel'
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 607
+    Top = 0
+    Width = 850
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 607
+    ClientWidth = 850
+    TabOrder = 1
+    object Picture: TGroupBox
+      Left = 0
+      Height = 386
+      Top = 221
+      Width = 850
+      Align = alClient
+      Caption = 'Image'
+      ClientHeight = 366
+      ClientWidth = 846
+      TabOrder = 3
+      object PICTBox: TImage
+        Left = 0
+        Height = 366
+        Top = 0
+        Width = 846
+        Align = alClient
+        AutoSize = True
+      end
+    end
+    object GroupBox4: TGroupBox
+      Left = 0
+      Height = 83
+      Top = 66
+      Width = 850
+      Align = alTop
+      Caption = 'Notes'
+      ClientHeight = 63
+      ClientWidth = 846
+      TabOrder = 1
+      object NOTEBox: TMemo
+        Left = 0
+        Height = 63
+        Top = 0
+        Width = 846
+        Align = alClient
+        ScrollBars = ssVertical
+        TabOrder = 0
+      end
+    end
+    object GroupBox1: TGroupBox
+      Left = 0
+      Height = 66
+      Top = 0
+      Width = 850
+      Align = alTop
+      ClientHeight = 46
+      ClientWidth = 846
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 271
+        Height = 15
+        Top = -3
+        Width = 33
+        Caption = 'Group'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 153
+        Height = 15
+        Top = -3
+        Width = 24
+        Caption = 'Date'
+        ParentColor = False
+      end
+      object PICTIDBox: TLabeledEdit
+        Left = 8
+        Height = 23
+        Top = 14
+        Width = 86
+        CharCase = ecUppercase
+        EditLabel.AnchorSideLeft.Control = PICTIDBox
+        EditLabel.AnchorSideRight.Control = PICTIDBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = PICTIDBox
+        EditLabel.Left = 8
+        EditLabel.Height = 15
+        EditLabel.Top = -4
+        EditLabel.Width = 86
+        EditLabel.Caption = 'Id'
+        EditLabel.ParentColor = False
+        MaxLength = 10
+        TabOrder = 0
+      end
+      object PICTNOBox: TLabeledEdit
+        Left = 99
+        Height = 23
+        Top = 14
+        Width = 49
+        EditLabel.AnchorSideLeft.Control = PICTNOBox
+        EditLabel.AnchorSideRight.Control = PICTNOBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = PICTNOBox
+        EditLabel.Left = 99
+        EditLabel.Height = 15
+        EditLabel.Top = -4
+        EditLabel.Width = 49
+        EditLabel.Caption = 'No'
+        EditLabel.ParentColor = False
+        TabOrder = 1
+      end
+      object PICTGRPBox: TComboBox
+        Left = 271
+        Height = 23
+        Top = 14
+        Width = 117
+        ItemHeight = 15
+        TabOrder = 3
+      end
+      object DESCRBox: TLabeledEdit
+        Left = 395
+        Height = 23
+        Top = 14
+        Width = 446
+        EditLabel.AnchorSideLeft.Control = DESCRBox
+        EditLabel.AnchorSideRight.Control = DESCRBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = DESCRBox
+        EditLabel.Left = 395
+        EditLabel.Height = 15
+        EditLabel.Top = -4
+        EditLabel.Width = 446
+        EditLabel.Caption = 'Description'
+        EditLabel.ParentColor = False
+        TabOrder = 4
+      end
+      object DTEBox: TDateTimePicker
+        Left = 153
+        Height = 23
+        Top = 14
+        Width = 90
+        ArrowShape = asClassicSmaller
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 2
+        TrailingSeparator = False
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 38586
+        Time = 0
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+    end
+    object ToolBar2: TToolBar
+      Left = 0
+      Height = 38
+      Top = 149
+      Width = 850
+      AutoSize = True
+      ButtonHeight = 36
+      ButtonWidth = 63
+      EdgeBorders = [ebBottom]
+      Images = demof.ImageList1
+      ShowCaptions = True
+      TabOrder = 2
+      Transparent = True
+      object LoadBtn: TToolButton
+        Left = 1
+        Hint = 'Load image from file'
+        Top = 0
+        Caption = '&Load image'
+        ImageIndex = 8
+        OnClick = LoadPhotoBtnClick
+        ParentShowHint = False
+        ShowHint = True
+      end
+      object DeleteBtn: TToolButton
+        Left = 71
+        Hint = 'Clear current image'
+        Top = 0
+        Caption = '&Clear image'
+        ImageIndex = 10
+        OnClick = ClearPhotoBtnClick
+        ParentShowHint = False
+        ShowHint = True
+      end
+      object FullViewBtn: TToolButton
+        Left = 142
+        Top = 0
+        Caption = '&Full view'
+        ImageIndex = 41
+        OnClick = ToolButton1Click
+      end
+    end
+    object Panel3: TPanel
+      Left = 0
+      Height = 34
+      Top = 187
+      Width = 850
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 34
+      ClientWidth = 850
+      Color = clGradientInactiveCaption
+      ParentColor = False
+      TabOrder = 4
+      object StretchCheck: TCheckBox
+        Left = 9
+        Height = 19
+        Hint = 'Fits piture in rectangle'
+        Top = 7
+        Width = 57
+        Alignment = taLeftJustify
+        Caption = 'Stretch'
+        OnClick = StretchCheckClick
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+      object PICTFORMATBox: TLabeledEdit
+        Left = 137
+        Height = 23
+        Top = 6
+        Width = 55
+        Color = clGradientInactiveCaption
+        EditLabel.AnchorSideTop.Control = PICTFORMATBox
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = PICTFORMATBox
+        EditLabel.AnchorSideBottom.Control = PICTFORMATBox
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 96
+        EditLabel.Height = 15
+        EditLabel.Top = 10
+        EditLabel.Width = 38
+        EditLabel.Caption = 'Format'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        ReadOnly = True
+        TabOrder = 1
+        TabStop = False
+      end
+      object PICTSIZEBox: TLabeledEdit
+        Left = 265
+        Height = 23
+        Top = 6
+        Width = 55
+        Color = clGradientInactiveCaption
+        EditLabel.AnchorSideTop.Control = PICTSIZEBox
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = PICTSIZEBox
+        EditLabel.AnchorSideBottom.Control = PICTSIZEBox
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 217
+        EditLabel.Height = 15
+        EditLabel.Top = 10
+        EditLabel.Width = 45
+        EditLabel.Caption = 'Size (KB)'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        ReadOnly = True
+        TabOrder = 2
+        TabStop = False
+      end
+    end
+  end
+end

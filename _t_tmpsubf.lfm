@@ -1,0 +1,1222 @@
+object t_tmpsubf: Tt_tmpsubf
+  Left = 491
+  Height = 554
+  Top = 215
+  Width = 1117
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'Export Substation'
+  ClientHeight = 554
+  ClientWidth = 1117
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.2'
+  object Panel4: TPanel
+    Left = 0
+    Height = 36
+    Top = 38
+    Width = 1117
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 1117
+    Color = clGradientInactiveCaption
+    ParentColor = False
+    TabOrder = 0
+    object fromdatetimebox: TDateTimePicker
+      Left = 44
+      Height = 23
+      Top = 6
+      Width = 137
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 0
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDateTime
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 41640
+      Time = 0
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+      OnChange = fromdatetimeboxChange
+    end
+    object todatetimebox: TDateTimePicker
+      Left = 281
+      Height = 23
+      Top = 6
+      Width = 137
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 1
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDateTime
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 43100
+      Time = 0
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+      OnChange = fromdatetimeboxChange
+    end
+    object Label7: TLabel
+      Left = 9
+      Height = 15
+      Top = 10
+      Width = 28
+      Caption = 'From'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 261
+      Height = 15
+      Top = 10
+      Width = 13
+      Caption = 'To'
+      ParentColor = False
+    end
+    object frompinbtn: TSpeedButton
+      Left = 183
+      Height = 27
+      Top = 4
+      Width = 27
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        8888888888888888878888888888888808888888888888708888888884478708
+        88888888844C708888888888874447888888888884444E788888888844464CC8
+        88888444446C6448888884CC46C888888888844CCC88888888888844EC888888
+        888888844C888888888888888888888888888888888888888888
+      }
+      OnClick = frompinbtnClick
+    end
+    object topinbtn: TSpeedButton
+      Left = 420
+      Height = 27
+      Top = 4
+      Width = 27
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        8888888888888888878888888888888808888888888888708888888884478708
+        88888888844C708888888888874447888888888884444E788888888844464CC8
+        88888444446C6448888884CC46C888888888844CCC88888888888844EC888888
+        888888844C888888888888888888888888888888888888888888
+      }
+      OnClick = topinbtnClick
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 38
+    Top = 0
+    Width = 1117
+    AutoSize = True
+    ButtonHeight = 36
+    ButtonWidth = 38
+    Caption = 'ToolBar1'
+    EdgeBorders = [ebBottom]
+    Images = mainf.ImageList1
+    ShowCaptions = True
+    TabOrder = 1
+    Transparent = True
+    object exportbtn: TToolButton
+      Left = 1
+      Top = 0
+      Caption = 'Export'
+      ImageIndex = 11
+      OnClick = exportbtnClick
+    end
+    object fillbtn: TToolButton
+      Left = 42
+      Top = 0
+      Caption = 'Fill'
+      ImageIndex = 44
+      OnClick = fillbtnClick
+    end
+    object ShowAllBtn: TToolButton
+      Left = 80
+      Top = 0
+      Caption = 'Show All'
+      ImageIndex = 58
+      OnClick = ShowAllBtnClick
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 417
+    Top = 112
+    Width = 852
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 2
+    TitleFont.Color = clBlack
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 529
+    Width = 1117
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 1117
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 3
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+  end
+  object Memo1: TMemo
+    Left = 852
+    Height = 417
+    Top = 112
+    Width = 265
+    Align = alRight
+    Lines.Strings = (
+      'Memo1'
+    )
+    ScrollBars = ssAutoBoth
+    TabOrder = 4
+    WordWrap = False
+  end
+  object StaticText1: TStaticText
+    Left = 0
+    Height = 38
+    Top = 74
+    Width = 1117
+    Align = alTop
+    Alignment = taCenter
+    BorderStyle = sbsSingle
+    Caption = 'StaticText1'
+    Color = clGradientInactiveCaption
+    Font.Height = -20
+    ParentFont = False
+    ParentColor = False
+    TabOrder = 5
+    Transparent = False
+  end
+  object t_tmpsubQ: TIBQuery
+    AllowAutoActivateTransaction = False
+    Database = dm.IBDatabase1
+    Transaction = dm.IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    GenerateParamNames = False
+    GeneratorField.ApplyOnEvent = gaeOnNewRecord
+    SQL.Strings = (
+      'select * from t_tmpsub'
+    )
+    Params = <>
+    DataSetCloseAction = dcDiscardChanges
+    left = 219
+    top = 204
+    object t_tmpsubQSUBID: TIntegerField
+      FieldKind = fkData
+      FieldName = 'SUBID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object t_tmpsubQDTE: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'DTE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object t_tmpsubQPNL1: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL1'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL2: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL2'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL3: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL3'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL4: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL4'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL5: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL5'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL6: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL6'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL7: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL7'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL8: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL8'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL9: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL9'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL10: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL10'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL11: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL11'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL12: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL12'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL13: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL13'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL14: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL14'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL15: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL15'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL16: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL16'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL17: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL17'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL18: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL18'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL19: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL19'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL20: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL20'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL21: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL21'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL22: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL22'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL23: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL23'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL24: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL24'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL25: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL25'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL26: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL26'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL27: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL27'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL28: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL28'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL29: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL29'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL30: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL30'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL31: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL31'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL32: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL32'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL33: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL33'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL34: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL34'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL35: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL35'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL36: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL36'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL37: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL37'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL38: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL38'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL39: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL39'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL40: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL40'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL41: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL41'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL42: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL42'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL43: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL43'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL44: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL44'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL45: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL45'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL46: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL46'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL47: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL47'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL48: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL48'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL49: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL49'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL50: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL50'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL51: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL51'
+      Index = 52
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL52: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL52'
+      Index = 53
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL53: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL53'
+      Index = 54
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL54: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL54'
+      Index = 55
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL55: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL55'
+      Index = 56
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL56: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL56'
+      Index = 57
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL57: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL57'
+      Index = 58
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL58: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL58'
+      Index = 59
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL59: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL59'
+      Index = 60
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL60: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL60'
+      Index = 61
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL61: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL61'
+      Index = 62
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL62: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL62'
+      Index = 63
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL63: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL63'
+      Index = 64
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL64: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL64'
+      Index = 65
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL65: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL65'
+      Index = 66
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL66: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL66'
+      Index = 67
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL67: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL67'
+      Index = 68
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL68: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL68'
+      Index = 69
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL69: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL69'
+      Index = 70
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL70: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL70'
+      Index = 71
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL71: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL71'
+      Index = 72
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL72: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL72'
+      Index = 73
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL73: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL73'
+      Index = 74
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL74: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL74'
+      Index = 75
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL75: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL75'
+      Index = 76
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL76: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL76'
+      Index = 77
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL77: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL77'
+      Index = 78
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL78: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL78'
+      Index = 79
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL79: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL79'
+      Index = 80
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object t_tmpsubQPNL80: TFloatField
+      FieldKind = fkData
+      FieldName = 'PNL80'
+      Index = 81
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = t_tmpsubQ
+    left = 219
+    top = 291
+  end
+end

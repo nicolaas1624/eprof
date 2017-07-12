@@ -1,0 +1,78 @@
+object printerinfof: Tprinterinfof
+  Left = 735
+  Height = 382
+  Top = 273
+  Width = 473
+  BorderIcons = [biSystemMenu, biMaximize]
+  BorderStyle = bsDialog
+  Caption = 'Printer information'
+  ClientHeight = 382
+  ClientWidth = 473
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.6.2.0'
+  object SGrid: TStringGrid
+    Left = 0
+    Height = 346
+    Top = 36
+    Width = 473
+    Align = alClient
+    AlternateColor = clCream
+    AutoFillColumns = True
+    ColCount = 2
+    Columns = <    
+      item
+        Color = clBtnFace
+        SizePriority = 0
+        Title.Caption = 'Property'
+        Width = 120
+      end    
+      item
+        MinSize = 60
+        MaxSize = 350
+        ReadOnly = True
+        Title.Caption = 'Value'
+        Width = 349
+      end>
+    DefaultColWidth = 120
+    FixedCols = 0
+    FixedRows = 0
+    Options = [goVertLine, goRangeSelect, goSmoothScroll]
+    RowCount = 15
+    TabOrder = 0
+    TitleStyle = tsNative
+    ColWidths = (
+      120
+      349
+    )
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 36
+    Top = 0
+    Width = 473
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 473
+    TabOrder = 1
+    object PrintersBox: TComboBox
+      Left = 55
+      Height = 23
+      Top = 7
+      Width = 250
+      ItemHeight = 15
+      OnChange = PrintersBoxChange
+      Sorted = True
+      TabOrder = 0
+    end
+    object Label1: TLabel
+      Left = 9
+      Height = 15
+      Top = 11
+      Width = 40
+      Caption = 'Printers'
+      ParentColor = False
+    end
+  end
+end

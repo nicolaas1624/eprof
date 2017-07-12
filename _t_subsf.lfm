@@ -1,0 +1,195 @@
+object t_subsf: Tt_subsf
+  Left = 694
+  Height = 536
+  Top = 248
+  Width = 452
+  ActiveControl = DBGrid1
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'Substations'
+  ClientHeight = 536
+  ClientWidth = 452
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.2'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 38
+    Top = 0
+    Width = 452
+    AutoSize = True
+    ButtonHeight = 36
+    ButtonWidth = 38
+    Caption = 'ToolBar1'
+    EdgeBorders = [ebBottom]
+    Images = mainf.ImageList1
+    ShowCaptions = True
+    TabOrder = 0
+    Transparent = True
+    object InsertBtn: TToolButton
+      Left = 1
+      Top = 0
+      Caption = '&Insert'
+      ImageIndex = 0
+      OnClick = InsertBtnClick
+    end
+    object EditBtn: TToolButton
+      Left = 39
+      Top = 0
+      Caption = '&Edit'
+      ImageIndex = 1
+      OnClick = EditBtnClick
+    end
+    object DeleteBtn: TToolButton
+      Left = 77
+      Top = 0
+      Caption = '&Delete'
+      ImageIndex = 2
+      OnClick = DeleteBtnClick
+    end
+    object ToolButton1: TToolButton
+      Left = 118
+      Height = 36
+      Top = 0
+      Caption = 'ToolButton1'
+      ImageIndex = 6
+      Style = tbsDivider
+    end
+    object PrintBtn: TToolButton
+      Left = 123
+      Top = 0
+      Caption = '&Print'
+      ImageIndex = 5
+      OnClick = PrintBtnClick
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 36
+    Top = 38
+    Width = 452
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 452
+    Color = clGradientInactiveCaption
+    ParentColor = False
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 15
+      Height = 15
+      Top = 12
+      Width = 21
+      Caption = 'Sort'
+      ParentColor = False
+    end
+    object SortBox: TComboBox
+      Left = 39
+      Height = 23
+      Top = 8
+      Width = 124
+      Color = clGradientInactiveCaption
+      ItemHeight = 15
+      OnChange = SortBoxChange
+      TabOrder = 0
+    end
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 511
+    Width = 452
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 452
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 2
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 437
+    Top = 74
+    Width = 452
+    Align = alClient
+    BevelOuter = bvNone
+    BorderWidth = 3
+    ClientHeight = 437
+    ClientWidth = 452
+    TabOrder = 3
+    object DBGrid1: TDBGrid
+      Left = 3
+      Height = 431
+      Top = 3
+      Width = 446
+      Align = alClient
+      Color = clWindow
+      Columns = <>
+      DataSource = DataSource1
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns, dgRowHighlight]
+      TabOrder = 0
+      TitleFont.Color = clBlack
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = T_SUBSQ
+    left = 184
+    top = 304
+  end
+  object T_SUBSQ: TIBQuery
+    AllowAutoActivateTransaction = False
+    Database = dm.IBDatabase1
+    Transaction = dm.IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    GenerateParamNames = False
+    GeneratorField.ApplyOnEvent = gaeOnNewRecord
+    SQL.Strings = (
+      'select * from T_SUBS'
+    )
+    Params = <>
+    DataSetCloseAction = dcDiscardChanges
+    left = 184
+    top = 224
+    object T_SUBSQSUBID: TIntegerField
+      FieldKind = fkData
+      FieldName = 'SUBID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object T_SUBSQDESCR: TIBStringField
+      FieldKind = fkData
+      FieldName = 'DESCR'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object T_SUBSQSERIALNO: TIBStringField
+      FieldKind = fkData
+      FieldName = 'SERIALNO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+  end
+end

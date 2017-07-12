@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="eprof"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="6">
+      <Item1>
+        <PackageName Value="ibexpress"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="Printer4Lazarus"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="SQLDBLaz"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="LCL"/>
+      </Item6>
+    </RequiredPackages>
+    <Units Count="37">
+      <Unit0>
+        <Filename Value="eprof.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="_mainf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="mainf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="_global.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="_loginf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="loginf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="_aboutf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="aboutf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="_capt_lookupf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="capt_lookupf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="_lookupf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="lookupf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="_print.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="_misc.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="_capt_pictf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="cap_t_pictf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="_t_pictf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_pictf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="_viewpictf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="viewpictf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="_snapshotf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="snapshotf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="_restoref.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="restoref"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="_password.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="passworddlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="_printerinfof.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="printerinfof"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="_emailsetupf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="emailsetupf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="_emaillogf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="emaillogf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="_initlookupsf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="initlookupsf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="_usermanagerf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="usermanagerf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="_capusermanager.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="capusermanager"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="_serverpropsf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="serverpropsf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="_t_helpf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_helpf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="_t_paramvaluesf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_paramvaluesf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="_capt_paramvaluesf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="capt_paramvaluesf"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="_zipfilef.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="zipfilef"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="_unzipfilef.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="unzipfilef"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="_draw.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="_date.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="_t_loadf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_loadf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="_t_panelsf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_panelsf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="_t_subsf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_subsf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="_capt_subsf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="capt_subsf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="_capt_panelsf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="capt_panelsf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="_t_tmploadf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_tmploadf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="_t_tmpsubf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="t_tmpsubf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit36>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="eprof"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="..\synapse\source\lib"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="6">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EIBDatabaseError"/>
+      </Item4>
+      <Item5>
+        <Name Value="EIBInterBaseError"/>
+      </Item5>
+      <Item6>
+        <Name Value="EIBClientError"/>
+      </Item6>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

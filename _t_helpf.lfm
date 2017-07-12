@@ -1,0 +1,295 @@
+object t_helpf: Tt_helpf
+  Left = 733
+  Height = 650
+  Top = 203
+  Width = 550
+  ActiveControl = DBGrid1
+  ClientHeight = 650
+  ClientWidth = 550
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.2'
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 590
+    Width = 550
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 550
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 0
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 61
+    Top = 0
+    Width = 550
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 61
+    ClientWidth = 550
+    Color = clGradientInactiveCaption
+    ParentColor = False
+    TabOrder = 1
+    object Label3: TLabel
+      Left = 230
+      Height = 15
+      Top = 11
+      Width = 25
+      Caption = 'Type'
+      ParentColor = False
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 181
+      Height = 25
+      Hint = 'Clear search string'
+      Top = 6
+      Width = 25
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000C40E0000C40E00000000000000000001FF00FF661E0C
+        641E0D621E0F5E1E105C1E115A1E13581E14571E16551E17531E18511E1A4F1E
+        1B4E1E1C4D1E1DFF00FF6B1E09D75B00D35600D15300CF5100CE4F00CE4D00CB
+        4B00CB4900CA4700C74500C74300C64100C54100C440004D1E1D6D1E08D7910E
+        B04E02AD4B01AB4700A94500A64300A54100A34000A13E009F3C009D3A009C38
+        00993700C541004E1E1C6F1E06D89517B45203B14F02AD4C01AB4800A94500A6
+        4300A54100A34000A13E009F3C009D3B009C3800C64200501E1C721E05D9981D
+        B65705B45303B15002FFFFFFFFFFFFA94500A64300FFFFFFFFFFFFA13E009F3C
+        009D3B00C74300511E1A741E05DC9C26BA5B06B75705B45404FFFFFFFFFFFFAC
+        4901A94600FFFFFFFFFFFFA34000A13F009F3C00C74600521E19751E03DD9F2C
+        BC5F08BA5B07B75805B55404FFFFFFFFFFFFFFFFFFFFFFFFA74300A54100A340
+        00A13F00CA4700541E18771E03DEA131C0640ABC5F09BA5C07B75806B55504FF
+        FFFFFFFFFFAC4A01AA4700A74300A54200A44000CB4A00561E16791E02E0A538
+        C2670CC0640BBD6009BA5C07B85906FFFFFFFFFFFFB04E03AC4B01AA4701A744
+        00A54200CC4B00581E157B1E01E2A93EC56B0FC2680DC0650BBD600AFFFFFFFF
+        FFFFFFFFFFFFFFFFB04F03AD4B02AA4801A74400CE4E005A1E137D1E01E3AC43
+        C76F11C56C0FC4680DFFFFFFFFFFFFBB5D09B85A07FFFFFFFFFFFFB04F03AD4C
+        02AB4801CF51005D1E127E1E00E5AF48CB7413C97011C66C0FFFFFFFFFFFFFBD
+        620ABB5E09FFFFFFFFFFFFB25305B15003AD4C03D155005F1E10801E00E6B14C
+        CE7816CB7413C97012C66D10C4690EC1660DBF630BBB5E0AB85B08B65706B454
+        05B15104D35900601E0F811E00E7B551D07B18CE7816CB7514C97212C66D11C4
+        6A0FC1670DBF630CBC5F0ABA5B09B65807B45406D45C00631E0D811E00E9B551
+        E7B553E6B24FE5B04BE3AC48E2AA43E1A741E0A53CDEA137DD9F34DC9C2DD999
+        2AD89723D85F00661E0CFF00FF811E00811E00801E007F1E007D1E017B1E017A
+        1E02771E03761E03741E04721E066F1E066D1E086A1E09FF00FF
+      }
+      OnClick = SpeedButton2Click
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object Label1: TLabel
+      Left = 23
+      Height = 15
+      Top = 39
+      Width = 21
+      Caption = 'Sort'
+      ParentColor = False
+    end
+    object CATIDBox: TComboBox
+      Left = 259
+      Height = 23
+      Top = 7
+      Width = 70
+      ItemHeight = 15
+      OnChange = SortBoxChange
+      TabOrder = 0
+      Text = '*ALL*'
+    end
+    object SearchBox: TLabeledEdit
+      Left = 51
+      Height = 23
+      Top = 7
+      Width = 130
+      EditLabel.AnchorSideTop.Control = SearchBox
+      EditLabel.AnchorSideTop.Side = asrCenter
+      EditLabel.AnchorSideRight.Control = SearchBox
+      EditLabel.AnchorSideBottom.Control = SearchBox
+      EditLabel.AnchorSideBottom.Side = asrBottom
+      EditLabel.Left = 10
+      EditLabel.Height = 15
+      EditLabel.Top = 11
+      EditLabel.Width = 35
+      EditLabel.Caption = 'Search'
+      EditLabel.ParentColor = False
+      LabelPosition = lpLeft
+      LabelSpacing = 6
+      TabOrder = 1
+      OnChange = SortBoxChange
+    end
+    object SortBox: TComboBox
+      Left = 51
+      Height = 23
+      Top = 35
+      Width = 130
+      Color = clGradientInactiveCaption
+      ItemHeight = 15
+      OnChange = SortBoxChange
+      TabOrder = 2
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 35
+    Top = 615
+    Width = 550
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 550
+    Color = clGradientInactiveCaption
+    ParentColor = False
+    TabOrder = 2
+    object CancelBtn: TBitBtn
+      Left = 90
+      Height = 25
+      Top = 6
+      Width = 75
+      Cancel = True
+      Caption = '&Cancel'
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 0
+    end
+    object OpenBtn: TBitBtn
+      Left = 7
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '&Open'
+      Default = True
+      Kind = bkOK
+      ModalResult = 1
+      OnClick = OpenBtnClick
+      TabOrder = 1
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 529
+    Top = 61
+    Width = 550
+    Align = alClient
+    BevelOuter = bvNone
+    BorderWidth = 3
+    ClientHeight = 529
+    ClientWidth = 550
+    Color = clGradientInactiveCaption
+    ParentColor = False
+    TabOrder = 3
+    object DBGrid1: TDBGrid
+      Left = 3
+      Height = 523
+      Top = 3
+      Width = 544
+      Align = alClient
+      Color = clWindow
+      Columns = <>
+      DataSource = DataSource1
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgRowHighlight]
+      TabOrder = 0
+      TitleFont.Color = clBlack
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      OnDblClick = OpenBtnClick
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = T_HELPQ
+    left = 104
+    top = 360
+  end
+  object T_HELPQ: TIBQuery
+    AllowAutoActivateTransaction = False
+    Database = dm.IBDatabase1
+    Transaction = dm.IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    GenerateParamNames = False
+    GeneratorField.ApplyOnEvent = gaeOnNewRecord
+    SQL.Strings = (
+      'select * from v_help   '
+    )
+    Params = <>
+    DataSetCloseAction = dcDiscardChanges
+    left = 104
+    top = 290
+    object T_HELPQID: TIntegerField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object T_HELPQCATID: TIntegerField
+      FieldKind = fkData
+      FieldName = 'CATID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object T_HELPQCATIDDESCR: TIBStringField
+      FieldKind = fkData
+      FieldName = 'CATIDDESCR'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 60
+    end
+    object T_HELPQORDERNO: TIntegerField
+      FieldKind = fkData
+      FieldName = 'ORDERNO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object T_HELPQDESCR: TIBStringField
+      FieldKind = fkData
+      FieldName = 'DESCR'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object T_HELPQFILENAME: TIBStringField
+      FieldKind = fkData
+      FieldName = 'FILENAME'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object T_HELPQKEYWORDS: TIBStringField
+      FieldKind = fkData
+      FieldName = 'KEYWORDS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 250
+    end
+  end
+end

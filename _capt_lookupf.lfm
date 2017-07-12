@@ -1,0 +1,103 @@
+object capt_lookupf: Tcapt_lookupf
+  Left = 711
+  Height = 108
+  Top = 294
+  Width = 433
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Insert Lookup'
+  ClientHeight = 108
+  ClientWidth = 433
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object Panel2: TPanel
+    Left = 0
+    Height = 71
+    Top = 0
+    Width = 433
+    Align = alClient
+    BevelOuter = bvNone
+    BorderWidth = 4
+    ClientHeight = 71
+    ClientWidth = 433
+    TabOrder = 0
+    object GroupBox1: TGroupBox
+      Left = 4
+      Height = 63
+      Top = 4
+      Width = 425
+      Align = alClient
+      ClientHeight = 43
+      ClientWidth = 421
+      TabOrder = 0
+      object IDBox: TLabeledEdit
+        Left = 9
+        Height = 23
+        Top = 13
+        Width = 50
+        EditLabel.AnchorSideLeft.Control = IDBox
+        EditLabel.AnchorSideRight.Control = IDBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = IDBox
+        EditLabel.Left = 9
+        EditLabel.Height = 15
+        EditLabel.Top = -5
+        EditLabel.Width = 50
+        EditLabel.Caption = 'Id'
+        EditLabel.ParentColor = False
+        TabOrder = 0
+      end
+      object DESCRBox: TLabeledEdit
+        Left = 64
+        Height = 23
+        Top = 13
+        Width = 350
+        EditLabel.AnchorSideLeft.Control = DESCRBox
+        EditLabel.AnchorSideRight.Control = DESCRBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = DESCRBox
+        EditLabel.Left = 64
+        EditLabel.Height = 15
+        EditLabel.Top = -5
+        EditLabel.Width = 350
+        EditLabel.Caption = 'Description'
+        EditLabel.ParentColor = False
+        MaxLength = 60
+        TabOrder = 1
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 37
+    Top = 71
+    Width = 433
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 37
+    ClientWidth = 433
+    TabOrder = 1
+    object OkBtn: TBitBtn
+      Left = 9
+      Height = 25
+      Top = 4
+      Width = 75
+      Default = True
+      DefaultCaption = True
+      Kind = bkOK
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object CancelBtn: TBitBtn
+      Left = 92
+      Height = 25
+      Top = 4
+      Width = 75
+      Cancel = True
+      DefaultCaption = True
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+end

@@ -1,0 +1,240 @@
+object lookupf: Tlookupf
+  Left = 908
+  Height = 700
+  Top = 216
+  Width = 573
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'Lookups'
+  ClientHeight = 700
+  ClientWidth = 573
+  Color = clBtnFace
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.2'
+  object Panel1: TPanel
+    Left = 0
+    Height = 601
+    Top = 74
+    Width = 573
+    Align = alClient
+    BevelOuter = bvNone
+    BorderWidth = 3
+    ClientHeight = 601
+    ClientWidth = 573
+    TabOrder = 0
+    object DBGrid1: TDBGrid
+      Left = 3
+      Height = 595
+      Top = 3
+      Width = 567
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Color = clGradientInactiveCaption
+          Title.Caption = 'Group'
+          Width = 140
+          FieldName = 'GRP'
+        end      
+        item
+          Title.Caption = 'Id'
+          Width = 41
+          FieldName = 'ID'
+        end      
+        item
+          Title.Caption = 'Description'
+          Width = 350
+          FieldName = 'DESCR'
+        end>
+      DataSource = DataSource1
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      TabOrder = 0
+      TitleFont.Color = clBlack
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      OnDblClick = DBGrid1DblClick
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 38
+    Top = 0
+    Width = 573
+    AutoSize = True
+    ButtonHeight = 36
+    ButtonWidth = 38
+    Caption = 'ToolBar1'
+    EdgeBorders = [ebBottom]
+    Images = mainf.ImageList1
+    ShowCaptions = True
+    TabOrder = 1
+    Transparent = True
+    object InsertBtn: TToolButton
+      Left = 1
+      Top = 0
+      Caption = '&Insert'
+      ImageIndex = 0
+      OnClick = InsertBtnClick
+    end
+    object EditBtn: TToolButton
+      Left = 39
+      Top = 0
+      Caption = '&Edit'
+      ImageIndex = 1
+      OnClick = EditBtnClick
+    end
+    object DeleteBtn: TToolButton
+      Left = 77
+      Top = 0
+      Caption = '&Delete'
+      ImageIndex = 2
+      OnClick = DeleteBtnClick
+    end
+    object ToolButton1: TToolButton
+      Left = 118
+      Height = 36
+      Top = 0
+      Caption = 'ToolButton1'
+      ImageIndex = 6
+      Style = tbsDivider
+    end
+    object PrintBtn: TToolButton
+      Left = 123
+      Top = 0
+      Caption = '&Print'
+      ImageIndex = 5
+      OnClick = PrintBtnClick
+    end
+    object ShowAllBtn: TToolButton
+      Left = 161
+      Top = 0
+      Caption = 'Show All'
+      ImageIndex = 58
+      OnClick = ShowAllBtnClick
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 36
+    Top = 38
+    Width = 573
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 573
+    Color = clGradientInactiveCaption
+    ParentColor = False
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 15
+      Height = 15
+      Top = 12
+      Width = 21
+      Caption = 'Sort'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 184
+      Height = 15
+      Top = 12
+      Width = 33
+      Caption = 'Group'
+      ParentColor = False
+    end
+    object SortBox: TComboBox
+      Left = 39
+      Height = 23
+      Top = 8
+      Width = 124
+      Color = clGradientInactiveCaption
+      ItemHeight = 15
+      OnChange = SortBoxChange
+      TabOrder = 0
+    end
+    object GRPBox: TComboBox
+      Left = 220
+      Height = 23
+      Top = 8
+      Width = 162
+      CharCase = ecUppercase
+      ItemHeight = 15
+      MaxLength = 25
+      OnChange = SortBoxChange
+      TabOrder = 1
+    end
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 675
+    Width = 573
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 573
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 3
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+  end
+  object DataSource1: TDataSource
+    DataSet = T_LOOKUPQ
+    left = 72
+    top = 408
+  end
+  object T_LOOKUPQ: TIBQuery
+    AllowAutoActivateTransaction = False
+    Database = dm.IBDatabase1
+    Transaction = dm.IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    GenerateParamNames = False
+    GeneratorField.ApplyOnEvent = gaeOnNewRecord
+    SQL.Strings = (
+      'Select A.GRP, A.ID, A.DESCR From T_LOOKUP A'
+    )
+    Params = <>
+    DataSetCloseAction = dcDiscardChanges
+    left = 72
+    top = 336
+    object T_LOOKUPQGRP: TIBStringField
+      DisplayLabel = 'Group'
+      FieldKind = fkData
+      FieldName = 'GRP'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 25
+    end
+    object T_LOOKUPQID: TIntegerField
+      DisplayLabel = 'Id'
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object T_LOOKUPQDESCR: TIBStringField
+      DisplayLabel = 'Description'
+      FieldKind = fkData
+      FieldName = 'DESCR'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+  end
+end

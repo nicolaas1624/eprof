@@ -1,0 +1,595 @@
+object t_pictf: Tt_pictf
+  Left = 470
+  Height = 515
+  Top = 220
+  Width = 958
+  ActiveControl = DBGrid1
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'Images'
+  ClientHeight = 515
+  ClientWidth = 958
+  Color = clBtnFace
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.1'
+  WindowState = wsMaximized
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 38
+    Top = 0
+    Width = 958
+    AutoSize = True
+    ButtonHeight = 36
+    ButtonWidth = 48
+    Caption = 'ToolButton2'
+    EdgeBorders = [ebBottom]
+    Images = demof.ImageList1
+    ShowCaptions = True
+    TabOrder = 0
+    Transparent = True
+    object InsertBtn: TToolButton
+      Left = 1
+      Top = 0
+      Caption = '&Insert'
+      ImageIndex = 0
+      OnClick = InsertBtnClick
+    end
+    object EditBtn: TToolButton
+      Left = 49
+      Top = 0
+      Caption = '&Edit'
+      ImageIndex = 1
+      OnClick = EditBtnClick
+    end
+    object DeleteBtn: TToolButton
+      Left = 97
+      Top = 0
+      Caption = '&Delete'
+      ImageIndex = 2
+      OnClick = DeleteBtnClick
+    end
+    object ToolButton1: TToolButton
+      Left = 145
+      Height = 36
+      Top = 0
+      Caption = 'ToolButton1'
+      ImageIndex = 6
+      Style = tbsSeparator
+    end
+    object PrintBtn: TToolButton
+      Left = 153
+      Hint = 'Print image'
+      Top = 0
+      Caption = '&Print'
+      ImageIndex = 5
+      OnClick = PrintBtnClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ExportBtn: TToolButton
+      Left = 201
+      Hint = 'Save current image as'
+      Top = 0
+      Caption = 'Save As'
+      ImageIndex = 28
+      OnClick = ExportBtnClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton2: TToolButton
+      Left = 249
+      Top = 0
+      Caption = 'Full view'
+      ImageIndex = 41
+      OnClick = ToolButton2Click
+    end
+    object HelpBtn: TToolButton
+      Left = 303
+      Top = 0
+      Caption = 'Help'
+      ImageIndex = 63
+      OnClick = HelpBtnClick
+    end
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 490
+    Width = 958
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 958
+    DataSource = DataSource1
+    Flat = True
+    Options = []
+    TabOrder = 1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 387
+    Top = 103
+    Width = 469
+    Align = alLeft
+    BevelOuter = bvNone
+    BorderWidth = 3
+    ClientHeight = 387
+    ClientWidth = 469
+    TabOrder = 2
+    object DBGrid1: TDBGrid
+      Left = 3
+      Height = 279
+      Top = 3
+      Width = 463
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Image-id'
+          Width = 50
+          FieldName = 'PICTID'
+        end      
+        item
+          Title.Caption = 'No'
+          Width = 50
+          FieldName = 'PICTNO'
+        end      
+        item
+          Title.Caption = 'Description'
+          Width = 300
+          FieldName = 'DESCR'
+        end      
+        item
+          Title.Caption = 'Date'
+          Width = 70
+          FieldName = 'DTE'
+        end      
+        item
+          Title.Caption = 'Group'
+          Width = 60
+          FieldName = 'PICTGRPDESCR'
+        end      
+        item
+          Title.Caption = 'Format'
+          Width = 50
+          FieldName = 'PICTFORMAT'
+        end      
+        item
+          Title.Caption = 'Size (kB)'
+          Width = 50
+          FieldName = 'PICTSIZE'
+        end>
+      DataSource = DataSource1
+      TabOrder = 0
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+    end
+    object GroupBox1: TGroupBox
+      Left = 3
+      Height = 102
+      Top = 282
+      Width = 463
+      Align = alBottom
+      Caption = 'Note'
+      ClientHeight = 82
+      ClientWidth = 459
+      TabOrder = 1
+      object DBMemo1: TDBMemo
+        Left = 0
+        Height = 82
+        Top = 0
+        Width = 459
+        Align = alClient
+        Color = clGradientInactiveCaption
+        DataField = 'NOTE'
+        DataSource = DataSource1
+        ScrollBars = ssVertical
+        TabOrder = 0
+      end
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 65
+    Top = 38
+    Width = 958
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 65
+    ClientWidth = 958
+    Color = clGradientInactiveCaption
+    ParentColor = False
+    TabOrder = 3
+    object Label5: TLabel
+      Left = 536
+      Height = 15
+      Top = 41
+      Width = 24
+      Caption = 'Date'
+      ParentColor = False
+    end
+    object Label1: TLabel
+      Left = 23
+      Height = 15
+      Top = 41
+      Width = 21
+      Caption = 'Sort'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 326
+      Height = 15
+      Top = 41
+      Width = 33
+      Caption = 'Group'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 694
+      Height = 15
+      Top = 41
+      Width = 38
+      Caption = 'Format'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 176
+      Height = 15
+      Top = 41
+      Width = 46
+      Caption = 'Image id'
+      ParentColor = False
+    end
+    object SpeedButton1: TSpeedButton
+      Left = 155
+      Height = 27
+      Top = 5
+      Width = 27
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000C40E0000C40E00000000000000000001FF00FF661E0C
+        641E0D621E0F5E1E105C1E115A1E13581E14571E16551E17531E18511E1A4F1E
+        1B4E1E1C4D1E1DFF00FF6B1E09D75B00D35600D15300CF5100CE4F00CE4D00CB
+        4B00CB4900CA4700C74500C74300C64100C54100C440004D1E1D6D1E08D7910E
+        B04E02AD4B01AB4700A94500A64300A54100A34000A13E009F3C009D3A009C38
+        00993700C541004E1E1C6F1E06D89517B45203B14F02AD4C01AB4800A94500A6
+        4300A54100A34000A13E009F3C009D3B009C3800C64200501E1C721E05D9981D
+        B65705B45303B15002AF4C01AB4800A94500A64300A54100A34000A13E009F3C
+        009D3B00C74300511E1A741E05DC9C26BA5B06B75705B45404FFFFFFFFFFFFAC
+        4901A94600FFFFFFFFFFFFA34000A13F009F3C00C74600521E19751E03DD9F2C
+        BC5F08BA5B07B75805FFFFFFFFFFFFAF4D02AC4A01FFFFFFFFFFFFA54100A340
+        00A13F00CA4700541E18771E03DEA131C0640ABC5F09BA5C07B75806FFFFFFFF
+        FFFFFFFFFFFFFFFFAA4700A74300A54200A44000CB4A00561E16791E02E0A538
+        C2670CC0640BBD6009BA5C07FFFFFFFFFFFFFFFFFFFFFFFFAC4B01AA4701A744
+        00A54200CC4B00581E157B1E01E2A93EC56B0FC2680DC0650BFFFFFFFFFFFFB8
+        5907B55605FFFFFFFFFFFFAD4B02AA4801A74400CE4E005A1E137D1E01E3AC43
+        C76F11C56C0FC4680DFFFFFFFFFFFFBB5D09B85A07FFFFFFFFFFFFB04F03AD4C
+        02AB4801CF51005D1E127E1E00E5AF48CB7413C97011C66C0FC4690EC0660CBD
+        620ABB5E09B85A07B65706B25305B15003AD4C03D155005F1E10801E00E6B14C
+        CE7816CB7413C97012C66D10C4690EC1660DBF630BBB5E0AB85B08B65706B454
+        05B15104D35900601E0F811E00E7B551D07B18CE7816CB7514C97212C66D11C4
+        6A0FC1670DBF630CBC5F0ABA5B09B65807B45406D45C00631E0D811E00E9B551
+        E7B553E6B24FE5B04BE3AC48E2AA43E1A741E0A53CDEA137DD9F34DC9C2DD999
+        2AD89723D85F00661E0CFF00FF811E00811E00801E007F1E007D1E017B1E017A
+        1E02771E03761E03741E04721E066F1E066D1E086A1E09FF00FF
+      }
+      OnClick = SpeedButton1Click
+    end
+    object StretchCheck: TCheckBox
+      Left = 249
+      Height = 19
+      Hint = 'Fits piture in rectangle'
+      Top = 10
+      Width = 57
+      Alignment = taLeftJustify
+      Caption = 'Stretch'
+      OnClick = StretchCheckClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object DATEBox: TComboBox
+      Left = 564
+      Height = 23
+      Top = 37
+      Width = 100
+      ItemHeight = 15
+      OnChange = SortBoxChange
+      TabOrder = 1
+    end
+    object SortBox: TComboBox
+      Left = 48
+      Height = 23
+      Top = 37
+      Width = 104
+      AutoDropDown = True
+      Color = clGradientInactiveCaption
+      ItemHeight = 15
+      OnChange = SortBoxChange
+      TabOrder = 2
+    end
+    object GroupBox: TComboBox
+      Left = 363
+      Height = 23
+      Top = 37
+      Width = 116
+      AutoDropDown = True
+      ItemHeight = 15
+      OnChange = SortBoxChange
+      TabOrder = 3
+    end
+    object FormatBox: TComboBox
+      Left = 736
+      Height = 23
+      Top = 37
+      Width = 72
+      AutoDropDown = True
+      ItemHeight = 15
+      OnChange = SortBoxChange
+      Sorted = True
+      TabOrder = 4
+    end
+    object SearchBox: TLabeledEdit
+      Left = 48
+      Height = 23
+      Top = 7
+      Width = 104
+      EditLabel.AnchorSideTop.Control = SearchBox
+      EditLabel.AnchorSideTop.Side = asrCenter
+      EditLabel.AnchorSideRight.Control = SearchBox
+      EditLabel.AnchorSideBottom.Control = SearchBox
+      EditLabel.AnchorSideBottom.Side = asrBottom
+      EditLabel.Left = 9
+      EditLabel.Height = 15
+      EditLabel.Top = 11
+      EditLabel.Width = 35
+      EditLabel.Caption = 'Search'
+      EditLabel.ParentColor = False
+      LabelPosition = lpLeft
+      LabelSpacing = 4
+      TabOrder = 5
+      OnChange = SortBoxChange
+    end
+    object PictIdBox: TComboBox
+      Left = 226
+      Height = 23
+      Top = 37
+      Width = 80
+      AutoDropDown = True
+      ItemHeight = 15
+      OnChange = SortBoxChange
+      TabOrder = 6
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 482
+      Height = 27
+      Top = 34
+      Width = 27
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000AF7A7AFFAC7878FFAA7676FFA87474FFA77272FFA47170FFA26F6FFFA16D
+        6DFFA06B6BFF9E6A69FF9C6968FF9C6968FF9B6768FF00000000000000000000
+        0000B17E7DFFFFEDD2FFFFECCDFFFFEACAFFFFE9C7FFFFE8C4FFFFE7C1FFFFE6
+        BFFFFFE5BBFFFFE3B9FFFFE3B8FFFFE3B8FF9D6969FF00000000000000000000
+        0000B58081FFFFEFD6FF009900FFFFEDD0FFFFEBCCFF993300FF993300FF9933
+        00FF993300FF993300FFFFE4BBFFFFE4BBFF9F6B6BFF00000000000000000000
+        0000B78383FFFFF2DBFFFFF0D8FFFFEFD5FFFFEED1FFFFECCDFFFFEACBFFFFE9
+        C8FFFFE8C5FFFFE6C1FFFFE5BEFFFFE5BEFFA16D6DFF00000000000000000066
+        00FF006600FF006600FF006600FF006600FF006600FF006600FF006600FF0066
+        00FF006600FF006600FF006600FF006600FF006600FF006600FF000000000066
+        00FFBD8989FFFFF5E6FFFFF5E6FFFFF3DFFFFFF1DBFFFFECCDFFFFEACBFFFFE9
+        C8FFFFE8C5FFFFE8C5FFFFEAC7FFFFEAC7FFA67272FF006600FF000000000066
+        00FFC28F8FFFFFF9F0FF006600FFFFF6EAFFFFF5E6FF993300FF993300FF9933
+        00FF993300FF993300FFFFEDD2FFFFEDD2FFA67272FF006600FF000000000066
+        00FFC28F8FFFFFF9F0FFFFF8EDFFFFF6EAFFFFF5E6FFFFF4E3FFFFF3DFFFFFF1
+        DCFFFFF0D8FFFFEED4FFFFEDD2FFFFEDD2FFAC7778FF006600FF000000000066
+        00FF004C00FF004C00FF004C00FF004C00FF006600FF006600FF006600FF0066
+        00FF006600FF006600FF006600FF006600FF006600FF006600FF000000000000
+        0000006600FF006600FF006600FFBCB8B0FFFFFAF0FFFFF8EDFFFFF6EAFFFFF6
+        E7FFFFF4E3FFFFF3DFFFFFF1DBFFFFF1DBFFB27E7EFF00000000000000000000
+        0000006600FF1BAF2EFF006600FFBEB9B3FFBDB8B0FF732600FF993300FF9933
+        00FF993300FF993300FFFFF3E2FFFFF3E2FFB58181FF00000000006600FF0066
+        00FF006600FF29BE45FF006600FF006600FF006600FFBEBAB4FFFFFCF7FFFFFB
+        F4FFFFFAF2FFFFF8EEFFFFF5E6FFFFF5E6FFB88484FF00000000006600FF4AE3
+        7BFF43DB6FFF39D05FFF2EC44DFF24B83CFF006600FFBEBAB4FFFFFCF7FFFFFB
+        F4FFFFFAF2FFFFF8EEFFFFF7EBFFFFF7EBFFBB8787FF00000000006600FF0066
+        00FF006600FF47DF75FF006600FF006600FF006600FFFFFEFAFFFFFEFAFFFFFD
+        F8FFFFFBF5FFFFFAF3FFFFF9F0FFFFF9F0FFBE8A89FF00000000000000000000
+        0000006600FF4DE67FFF006600FF8C6868FFC89595FFC89595FFC89595FFC793
+        93FFC69292FFC49090FFC28E8EFFC28E8EFFC08C8DFF00000000000000000000
+        0000006600FF006600FF006600FF000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+      OnClick = SpeedButton2Click
+    end
+  end
+  object Panel4: TPanel
+    Left = 473
+    Height = 387
+    Top = 103
+    Width = 485
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 387
+    ClientWidth = 485
+    TabOrder = 4
+    object ScrollBox1: TScrollBox
+      Left = 0
+      Height = 387
+      Top = 0
+      Width = 485
+      HorzScrollBar.Page = 90
+      VertScrollBar.Page = 90
+      Align = alClient
+      ClientHeight = 383
+      ClientWidth = 481
+      TabOrder = 0
+      object PICTBox: TImage
+        Left = 0
+        Height = 383
+        Top = 0
+        Width = 481
+        Align = alClient
+        AutoSize = True
+      end
+    end
+  end
+  object Splitter2: TSplitter
+    Left = 469
+    Height = 387
+    Top = 103
+    Width = 4
+    Color = clGradientActiveCaption
+    ParentColor = False
+  end
+  object DataSource1: TDataSource
+    DataSet = T_PICTQ
+    OnDataChange = DataSource1DataChange
+    left = 120
+    top = 304
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    left = 120
+    top = 169
+  end
+  object SavePictureDialog1: TSavePictureDialog
+    DefaultExt = '.jpg'
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofEnableSizing]
+    left = 240
+    top = 169
+  end
+  object T_PICTQ: TIBQuery
+    AllowAutoActivateTransaction = False
+    Database = dm.IBDatabase1
+    Transaction = dm.IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    GenerateParamNames = False
+    GeneratorField.ApplyOnEvent = gaeOnNewRecord
+    SQL.Strings = (
+      'Select A.PICTID, A.PICTNO, A.PICTGRP, A.PICTGRPDESCR, A.PICTFORMAT, A.PICTSIZE, A.DESCR, A.NOTE, A.PICT, A.DTE From V_PICT A'
+    )
+    Params = <>
+    DataSetCloseAction = dcDiscardChanges
+    left = 120
+    top = 248
+    object T_PICTQPICTID: TIntegerField
+      DisplayLabel = 'Image-id'
+      FieldKind = fkData
+      FieldName = 'PICTID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object T_PICTQPICTNO: TIntegerField
+      DisplayLabel = 'No'
+      FieldKind = fkData
+      FieldName = 'PICTNO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object T_PICTQPICTGRP: TIntegerField
+      FieldKind = fkData
+      FieldName = 'PICTGRP'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object T_PICTQPICTGRPDESCR: TIBStringField
+      DisplayLabel = 'Group'
+      FieldKind = fkData
+      FieldName = 'PICTGRPDESCR'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 60
+    end
+    object T_PICTQPICTFORMAT: TIBStringField
+      DisplayLabel = 'Format'
+      FieldKind = fkData
+      FieldName = 'PICTFORMAT'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 5
+    end
+    object T_PICTQPICTSIZE: TIBBCDField
+      DisplayLabel = 'Size (kB)'
+      FieldKind = fkData
+      FieldName = 'PICTSIZE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object T_PICTQDESCR: TIBStringField
+      DisplayLabel = 'Description'
+      FieldKind = fkData
+      FieldName = 'DESCR'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object T_PICTQNOTE: TIBStringField
+      DisplayLabel = 'Note'
+      FieldKind = fkData
+      FieldName = 'NOTE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object T_PICTQPICT: TBlobField
+      FieldKind = fkData
+      FieldName = 'PICT'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object T_PICTQDTE: TDateField
+      DisplayLabel = 'Date'
+      FieldKind = fkData
+      FieldName = 'DTE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

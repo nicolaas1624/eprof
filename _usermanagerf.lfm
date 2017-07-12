@@ -1,0 +1,93 @@
+object usermanagerf: Tusermanagerf
+  Left = 672
+  Height = 530
+  Top = 261
+  Width = 494
+  BorderIcons = [biSystemMenu, biMaximize]
+  BorderStyle = bsDialog
+  Caption = 'User manager'
+  ClientHeight = 530
+  ClientWidth = 494
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.1'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 24
+    Top = 0
+    Width = 494
+    AutoSize = True
+    ButtonWidth = 58
+    Caption = 'ToolBar1'
+    Color = clBtnFace
+    Images = demof.ImageList1
+    List = True
+    ParentColor = False
+    ShowCaptions = True
+    TabOrder = 0
+    object InsertBtn: TToolButton
+      Left = 1
+      Top = 2
+      AutoSize = True
+      Caption = '&Insert'
+      ImageIndex = 0
+      OnClick = InsertBtnClick
+    end
+    object EditBtn: TToolButton
+      Left = 59
+      Top = 2
+      AutoSize = True
+      Caption = '&Edit'
+      ImageIndex = 1
+      OnClick = EditBtnClick
+    end
+    object DeleteBtn: TToolButton
+      Left = 117
+      Top = 2
+      AutoSize = True
+      Caption = '&Delete'
+      ImageIndex = 2
+      OnClick = DeleteBtnClick
+    end
+  end
+  object lvUsers: TListView
+    Left = 0
+    Height = 506
+    Top = 24
+    Width = 494
+    Align = alClient
+    AutoWidthLastColumn = True
+    Columns = <    
+      item
+        Caption = 'User name'
+        Width = 100
+      end    
+      item
+        Caption = 'First name'
+        Width = 120
+      end    
+      item
+        Caption = 'Middle name'
+        Width = 120
+      end    
+      item
+        Caption = 'Last name'
+        Width = 150
+      end>
+    ColumnClick = False
+    GridLines = True
+    ReadOnly = True
+    RowSelect = True
+    SortColumn = 0
+    SortType = stText
+    TabOrder = 1
+    ViewStyle = vsReport
+  end
+  object FBAdmin1: TFBAdmin
+    Protocol = IBSPTCPIP
+    UseExceptions = False
+    left = 336
+    top = 112
+  end
+end

@@ -1,0 +1,177 @@
+object serverpropsf: Tserverpropsf
+  Left = 608
+  Height = 574
+  Top = 224
+  Width = 900
+  BorderStyle = bsDialog
+  Caption = 'Server properties & Database statistics'
+  ClientHeight = 574
+  ClientWidth = 900
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 574
+    Top = 0
+    Width = 900
+    Align = alClient
+    BorderWidth = 3
+    ClientHeight = 574
+    ClientWidth = 900
+    TabOrder = 0
+    object Memo1: TMemo
+      Left = 4
+      Height = 503
+      Top = 67
+      Width = 892
+      Align = alClient
+      Color = clBlack
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clYellow
+      Font.Height = -15
+      Font.Name = 'Courier New'
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssBoth
+      TabOrder = 0
+      WordWrap = False
+    end
+    object GroupBox1: TGroupBox
+      Left = 4
+      Height = 63
+      Top = 4
+      Width = 892
+      Align = alTop
+      ClientHeight = 43
+      ClientWidth = 888
+      TabOrder = 1
+      object ServerNameBox: TLabeledEdit
+        Left = 9
+        Height = 23
+        Top = 14
+        Width = 110
+        Color = clGradientInactiveCaption
+        EditLabel.AnchorSideLeft.Control = ServerNameBox
+        EditLabel.AnchorSideRight.Control = ServerNameBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = ServerNameBox
+        EditLabel.Left = 9
+        EditLabel.Height = 15
+        EditLabel.Top = -4
+        EditLabel.Width = 110
+        EditLabel.Caption = 'Server name'
+        EditLabel.ParentColor = False
+        ReadOnly = True
+        TabOrder = 0
+        Text = 'localhost'
+      end
+      object ProtocolBox: TLabeledEdit
+        Left = 125
+        Height = 23
+        Top = 14
+        Width = 110
+        Color = clGradientInactiveCaption
+        EditLabel.AnchorSideLeft.Control = ProtocolBox
+        EditLabel.AnchorSideRight.Control = ProtocolBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = ProtocolBox
+        EditLabel.Left = 125
+        EditLabel.Height = 15
+        EditLabel.Top = -4
+        EditLabel.Width = 110
+        EditLabel.Caption = 'Protocol'
+        EditLabel.ParentColor = False
+        ReadOnly = True
+        TabOrder = 1
+        Text = 'TCP'
+      end
+      object ClientLibBox: TLabeledEdit
+        Left = 241
+        Height = 23
+        Top = 14
+        Width = 110
+        Color = clGradientInactiveCaption
+        EditLabel.AnchorSideLeft.Control = ClientLibBox
+        EditLabel.AnchorSideRight.Control = ClientLibBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = ClientLibBox
+        EditLabel.Left = 241
+        EditLabel.Height = 15
+        EditLabel.Top = -4
+        EditLabel.Width = 110
+        EditLabel.Caption = 'Client library'
+        EditLabel.ParentColor = False
+        ReadOnly = True
+        TabOrder = 2
+        Text = 'gds32.dll'
+      end
+      object UsernameBox: TLabeledEdit
+        Left = 357
+        Height = 23
+        Top = 14
+        Width = 110
+        Color = clGradientInactiveCaption
+        EditLabel.AnchorSideLeft.Control = UsernameBox
+        EditLabel.AnchorSideRight.Control = UsernameBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = UsernameBox
+        EditLabel.Left = 357
+        EditLabel.Height = 15
+        EditLabel.Top = -4
+        EditLabel.Width = 110
+        EditLabel.Caption = 'User name'
+        EditLabel.ParentColor = False
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object PasswordBox: TLabeledEdit
+        Left = 473
+        Height = 23
+        Top = 14
+        Width = 110
+        Color = clGradientInactiveCaption
+        EchoMode = emPassword
+        EditLabel.AnchorSideLeft.Control = PasswordBox
+        EditLabel.AnchorSideRight.Control = PasswordBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = PasswordBox
+        EditLabel.Left = 473
+        EditLabel.Height = 15
+        EditLabel.Top = -4
+        EditLabel.Width = 110
+        EditLabel.Caption = 'Password'
+        EditLabel.ParentColor = False
+        PasswordChar = '*'
+        ReadOnly = True
+        TabOrder = 4
+      end
+      object RoleBox: TLabeledEdit
+        Left = 589
+        Height = 23
+        Top = 14
+        Width = 110
+        Color = clGradientInactiveCaption
+        EditLabel.AnchorSideLeft.Control = RoleBox
+        EditLabel.AnchorSideRight.Control = RoleBox
+        EditLabel.AnchorSideRight.Side = asrBottom
+        EditLabel.AnchorSideBottom.Control = RoleBox
+        EditLabel.Left = 589
+        EditLabel.Height = 15
+        EditLabel.Top = -4
+        EditLabel.Width = 110
+        EditLabel.Caption = 'Role'
+        EditLabel.ParentColor = False
+        ReadOnly = True
+        TabOrder = 5
+      end
+    end
+  end
+  object FBAdmin1: TFBAdmin
+    Protocol = IBSPLOCAL
+    UseExceptions = False
+    left = 370
+    top = 112
+  end
+end

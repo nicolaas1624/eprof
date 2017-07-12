@@ -1,0 +1,68 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 406
+  HorizontalOffset = 793
+  VerticalOffset = 297
+  Width = 564
+  object IBTransaction1: TIBTransaction
+    Active = False
+    DefaultDatabase = IBDatabase1
+    Params.Strings = (
+      'read_committed'
+      'rec_version'
+      'nowait'
+    )
+    left = 136
+    top = 40
+  end
+  object IBDatabase1: TIBDatabase
+    Connected = False
+    LoginPrompt = False
+    CreateIfNotExists = False
+    AllowStreamedConnected = False
+    DatabaseName = 'localhost:C:\lapps\demo\data\DEMO.FDB'
+    Params.Strings = (
+      'user_name=SYSDBA'
+      'password=masterkey'
+    )
+    DefaultTransaction = IBTransaction1
+    IdleTimer = 0
+    TraceFlags = []
+    UseDefaultSystemCodePage = False
+    left = 40
+    top = 40
+  end
+  object XQ: TIBQuery
+    AllowAutoActivateTransaction = False
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    GenerateParamNames = False
+    GeneratorField.ApplyOnEvent = gaeOnNewRecord
+    Params = <>
+    DataSetCloseAction = dcDiscardChanges
+    left = 240
+    top = 40
+  end
+  object XSPQ: TIBStoredProc
+    AllowAutoActivateTransaction = False
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    StoredProcName = 'ADD_SUBLOADDATA_FROM_LOAD'
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'VSUBID'
+        ParamType = ptInput
+      end>
+    left = 336
+    top = 40
+    ParamData = <    
+      item
+        DataType = ftInteger
+        Name = 'VSUBID'
+        ParamType = ptInput
+      end>
+  end
+end

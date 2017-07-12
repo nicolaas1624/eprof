@@ -1,0 +1,29 @@
+object initlookupsf: Tinitlookupsf
+  Left = 613
+  Height = 592
+  Top = 188
+  Width = 930
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'Initialize lookups'
+  ClientHeight = 592
+  ClientWidth = 930
+  OnActivate = FormActivate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.2'
+  object Memo1: TMemo
+    Left = 0
+    Height = 592
+    Top = 0
+    Width = 930
+    Align = alClient
+    Color = clBlack
+    Font.Color = clYellow
+    Font.Height = -15
+    Font.Name = 'Courier New'
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssBoth
+    TabOrder = 0
+  end
+end

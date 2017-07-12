@@ -1,0 +1,83 @@
+object snapshotf: Tsnapshotf
+  Left = 630
+  Height = 600
+  Top = 213
+  Width = 750
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'Make a Snapshot'
+  ClientHeight = 600
+  ClientWidth = 750
+  Color = clBtnFace
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.1'
+  object Panel1: TPanel
+    Left = 0
+    Height = 37
+    Top = 563
+    Width = 750
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 37
+    ClientWidth = 750
+    TabOrder = 1
+    object OkBtn: TBitBtn
+      Left = 9
+      Height = 25
+      Top = 5
+      Width = 75
+      Default = True
+      DefaultCaption = True
+      Kind = bkOK
+      OnClick = OkBtnClick
+      TabOrder = 0
+    end
+    object CancelBtn: TBitBtn
+      Left = 92
+      Height = 25
+      Top = 5
+      Width = 75
+      Cancel = True
+      Caption = '&Cancel'
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object Memo1: TMemo
+    Left = 0
+    Height = 563
+    Top = 0
+    Width = 750
+    Align = alClient
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clYellow
+    Font.Height = -15
+    Font.Name = 'Courier New'
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssBoth
+    TabOrder = 0
+    TabStop = False
+    WordWrap = False
+  end
+  object IBBackupService1: TIBBackupService
+    ServerName = 'localhost'
+    Protocol = TCP
+    LoginPrompt = False
+    TraceFlags = []
+    Verbose = True
+    BlockingFactor = 0
+    Options = []
+    left = 408
+    top = 72
+  end
+  object IBServerProperties1: TIBServerProperties
+    LoginPrompt = False
+    TraceFlags = []
+    Options = []
+    left = 420
+    top = 178
+  end
+end

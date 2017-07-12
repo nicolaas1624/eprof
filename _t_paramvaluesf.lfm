@@ -1,0 +1,168 @@
+object t_paramvaluesf: Tt_paramvaluesf
+  Left = 750
+  Height = 528
+  Top = 251
+  Width = 467
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'Setup parameters'
+  ClientHeight = 528
+  ClientWidth = 467
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.2'
+  object Panel1: TPanel
+    Left = 0
+    Height = 465
+    Top = 38
+    Width = 467
+    Align = alClient
+    BevelOuter = bvNone
+    BorderWidth = 3
+    ClientHeight = 465
+    ClientWidth = 467
+    TabOrder = 0
+    object DBGrid1: TDBGrid
+      Left = 3
+      Height = 459
+      Top = 3
+      Width = 461
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Parameter-id'
+          Width = 175
+          FieldName = 'PARAMID'
+        end      
+        item
+          Title.Caption = 'Parameter value'
+          Width = 250
+          FieldName = 'PARAMVALUE'
+        end>
+      DataSource = DataSource1
+      TabOrder = 0
+    end
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 503
+    Width = 467
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 467
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 38
+    Top = 0
+    Width = 467
+    AutoSize = True
+    ButtonHeight = 36
+    ButtonWidth = 47
+    Caption = 'ToolBar1'
+    EdgeBorders = [ebBottom]
+    Images = mainf.ImageList1
+    ShowCaptions = True
+    TabOrder = 2
+    Transparent = True
+    object InsertBtn: TToolButton
+      Left = 1
+      Top = 0
+      Caption = '&Insert'
+      ImageIndex = 0
+      OnClick = InsertBtnClick
+    end
+    object EditBtn: TToolButton
+      Left = 48
+      Top = 0
+      Caption = '&Edit'
+      ImageIndex = 1
+      OnClick = EditBtnClick
+    end
+    object DeleteBtn: TToolButton
+      Left = 95
+      Top = 0
+      Caption = '&Delete'
+      ImageIndex = 2
+      OnClick = DeleteBtnClick
+    end
+    object ToolButton1: TToolButton
+      Left = 142
+      Height = 36
+      Top = 0
+      Caption = 'ToolButton1'
+      ImageIndex = 6
+      Style = tbsSeparator
+    end
+    object PrintBtn: TToolButton
+      Left = 150
+      Top = 0
+      Caption = '   &Print   '
+      ImageIndex = 5
+      OnClick = PrintBtnClick
+    end
+    object HelpBtn: TToolButton
+      Left = 201
+      Top = 0
+      Caption = 'Help'
+      ImageIndex = 63
+      OnClick = HelpBtnClick
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = T_PARAMVALUESQ
+    left = 144
+    top = 360
+  end
+  object T_PARAMVALUESQ: TIBQuery
+    AllowAutoActivateTransaction = False
+    Database = dm.IBDatabase1
+    Transaction = dm.IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    GenerateParamNames = False
+    GeneratorField.ApplyOnEvent = gaeOnNewRecord
+    SQL.Strings = (
+      'Select A.PARAMID, A.PARAMVALUE From T_PARAMVALUES A'
+    )
+    Params = <>
+    DataSetCloseAction = dcDiscardChanges
+    left = 144
+    top = 288
+    object T_PARAMVALUESQPARAMID: TIBStringField
+      DisplayLabel = 'Parameter-id'
+      FieldKind = fkData
+      FieldName = 'PARAMID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 25
+    end
+    object T_PARAMVALUESQPARAMVALUE: TIBStringField
+      DisplayLabel = 'Parameter value'
+      FieldKind = fkData
+      FieldName = 'PARAMVALUE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+  end
+end
